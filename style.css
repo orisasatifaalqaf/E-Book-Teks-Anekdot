@@ -268,21 +268,24 @@ body {
 
 .page-content table {
     width: 100%;
+    table-layout: auto;
     border-collapse: collapse;
     font-family: var(--font-sans);
     font-size: 14px;
+    background-color: #ffffff !important; /* Force white background */
+    color: #000000 !important; /* Force black text */
 }
 
 .page-content th, .page-content td {
-    border: 1px solid #e2e8f0;
+    border: 1px solid #718096 !important; /* Darker border to combat dark mode fade */
     padding: 10px;
     text-align: left;
+    color: #000000 !important;
 }
 
 .page-content th {
-    background-color: #edf2f7;
-    color: var(--primary-color);
-    font-weight: 600;
+    background-color: #e2e8f0 !important;
+    font-weight: 700;
 }
 
 /* Custom Blocks (Alerts, Tips, Try it) */
