@@ -220,13 +220,16 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--font-serif);
-    font-size: 14px; /* Reduced font size to normal */
-    line-height: 1.5; /* Reduced line height */
-    overflow-y: auto; /* Allow scrolling if it still overflows slightly */
-    scrollbar-width: none; /* Firefox */
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.page-content > * {
+    flex-shrink: 0; /* PREVENT FLEXBOX FROM SHRINKING TABLES TO 0 HEIGHT */
 }
 .page-content::-webkit-scrollbar {
-    display: none; /* Chrome */
+    display: none;
 }
 
 /* Typography inside Book */
@@ -251,13 +254,16 @@ body {
 /* Table styles */
 .table-wrapper {
     margin: 16px 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
-    transform: translateZ(0); /* Fix for Webkit/Blink vanishing elements inside 3D transforms */
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    background-color: white; /* Force background color so it doesn't blend into dark mode */
+}
+.table-wrapper table {
+    width: 100%;
+    table-layout: auto;
 }
 
 .page-content table {
