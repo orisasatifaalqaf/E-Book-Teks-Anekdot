@@ -565,67 +565,17 @@ const bookPages = [
     // Page 15: BAB 8 Latihan (p12)
     `
     <div class="page">
-        <div class="page-content">
-            <h1>BAB 8: Latihan & Refleksi</h1>
-            
-            <h3>A. Pilihan Ganda</h3>
-            
-            <div class="quiz-question">
-                <p>1. Cerita singkat yang lucu dan berisi sindiran terhadap suatu keadaan disebut ...</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q1" value="A"> A. Fabel</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q1" value="B"> B. Anekdot</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q1" value="C"> C. Legenda</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q1" value="D"> D. Cerpen</label></li>
-                </ul>
-            </div>
-            
-            <div class="quiz-question">
-                <p>2. Bagian anekdot yang memperkenalkan tokoh dan latar disebut ...</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q2" value="A"> A. Orientasi</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q2" value="B"> B. Komplikasi</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q2" value="C"> C. Evaluasi</label></li>
-                </ul>
-            </div>
-            
-            <div class="quiz-question">
-                <p>3. Bagian yang memuat kejadian janggal sehingga lucunya memuncak adalah ...</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q3" value="A"> A. Orientasi</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q3" value="B"> B. Evaluasi</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q3" value="C"> C. Komplikasi</label></li>
-                </ul>
-            </div>
-            
-            <div class="quiz-question">
-                <p>4. "Wah, cepat sekali kamu datang, pelajaran sudah selesai dari tadi!" Kalimat ini memakai majas ...</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q4" value="A"> A. Hiperbola</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q4" value="B"> B. Personifikasi</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q4" value="C"> C. Ironi</label></li>
-                </ul>
-            </div>
-            
-            <div class="quiz-question">
-                <p>5. Manakah kalimat yang berupa pertanyaan retoris?</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q5" value="A"> A. "Jam berapa upacara dimulai?"</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q5" value="B"> B. "Siapa sih yang tidak ingin nilainya bagus tanpa belajar?"</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q5" value="C"> C. "Di mana letak kantin sekolah?"</label></li>
-                </ul>
-            </div>
-            
-            <div class="quiz-question">
-                <p>6. Kata berikut yang termasuk kata kerja material adalah ...</p>
-                <ul class="quiz-options">
-                    <li><label class="quiz-label"><input type="radio" name="q6" value="A"> A. Menyapu</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q6" value="B"> B. Merasa</label></li>
-                    <li><label class="quiz-label"><input type="radio" name="q6" value="C"> C. Berharap</label></li>
-                </ul>
-            </div>
-            
-            <button class="btn-simpan-pg" onclick="window.saveMCQ(this)"><i class="ph ph-floppy-disk"></i> Simpan Pilihan Ganda</button>
+        <div class="page-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+            <h1 style="border:none; margin-bottom: 20px; font-size: 1.8rem;">BAB 8<br>Latihan & Refleksi</h1>
+            <i class="ph ph-exam" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+            <p style="margin-bottom: 30px; line-height: 1.6; font-size: 0.95rem;">
+                Kamu telah menyelesaikan semua materi tentang Teks Anekdot! Sekarang saatnya menguji pemahamanmu dan melakukan refleksi.
+                Semua soal pilihan ganda, uraian, dan refleksi telah disatukan di dalam Lembar Kerja.
+            </p>
+            <a href="https://forms.gle/AB4zFWN95YEbbEuz7" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background-color: var(--accent-color); color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 1.05rem;">
+                Mulai Kerjakan Evaluasi <i class="ph ph-arrow-square-out" style="font-size: 1.3rem; margin-left: 8px;"></i>
+            </a>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #718096; font-style: italic;">*Akan membuka tab/aplikasi baru</p>
             
             <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>12</span></div>
         </div>
@@ -634,57 +584,13 @@ const bookPages = [
     // Page 16: BAB 8 Lanjutan (p13)
     `
     <div class="page">
-        <div class="page-content">
-            <h3>B. Uraian</h3>
-            
-            <div class="essay-question">
-                <p>1. Sebutkan struktur, dua kaidah kebahasaan, dan kritik yang ingin disampaikan pada teks anekdot "Piket Kelas"!</p>
-                <div style="margin-bottom: 12px; display: flex; gap: 8px;">
-                    <button class="btn-jawab" onclick="window.toggleAnswer(this)" style="margin: 0;"><i class="ph ph-pencil-simple"></i> Jawab</button>
-                    <button class="btn-lihat-teks" onclick="window.toggleTeks(this)" style="background-color: #4a5568; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;"><i class="ph ph-book-open"></i> Lihat Teks</button>
-                </div>
-                
-                <div class="teks-box" style="display: none; margin-bottom: 15px; padding: 15px; background: #ebf8ff; border-left: 4px solid #3182ce; border-radius: 4px; font-size: 0.85rem; animation: fadeIn 0.3s ease; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
-                    <strong style="display:block; margin-bottom:8px; color:#2c5282;">Teks: Piket Kelas</strong>
-                    <p style="margin-bottom:8px; line-height: 1.5;">Senin pagi, Bu Sari masuk ke kelas. Papan tulis masih penuh coretan, dan lantai berserakan kertas. Di daftar piket tertulis lima nama, tetapi tak satu pun terlihat memegang sapu.</p>
-                    <p style="margin-bottom:8px; line-height: 1.5;">"Siapa yang piket hari ini?" tanya Bu Sari. Lima anak saling menoleh. "Kami piket hari Jumat, Bu," jawab Dani. "Tapi sekarang hari Senin," kata Bu Sari. "Justru itu, Bu. Kami menyisakan sampah supaya hari Jumat nanti tidak bingung mau membersihkan apa," jawab Dani mantap.</p>
-                    <p style="line-height: 1.5;">Bu Sari tersenyum, lalu mengambil sapu dan menyerahkannya kepada Dani. "Alasan yang bagus. Karena kalian rajin menyimpan sampah, hari ini kalian juga yang menyimpannya ke tempat sampah." Lima anak itu pun bergegas menyapu.</p>
-                </div>
-
-                <div class="answer-box">
-                    <textarea id="uraian-1" placeholder="Ketik jawaban Anda di sini..."></textarea>
-                    <button class="btn-simpan" onclick="window.saveAnswer('uraian-1', this)"><i class="ph ph-floppy-disk"></i> Simpan</button>
-                </div>
-            </div>
-            
-            <div class="essay-question">
-                <p>2. Tulislah anekdot singkat (tiga paragraf) tentang satu fenomena di sekolahmu. Pastikan strukturnya lengkap dan kritiknya santun.</p>
-                <button class="btn-jawab" onclick="window.toggleAnswer(this)"><i class="ph ph-pencil-simple"></i> Jawab</button>
-                <div class="answer-box">
-                    <textarea id="uraian-2" placeholder="Ketik draf anekdot Anda di sini..."></textarea>
-                    <button class="btn-simpan" onclick="window.saveAnswer('uraian-2', this)"><i class="ph ph-floppy-disk"></i> Simpan</button>
-                </div>
-            </div>
-            
-            <h3>C. Refleksi</h3>
-            
-            <div class="essay-question">
-                <p>1. Apa hal baru yang paling menarik bagimu dari belajar anekdot?</p>
-                <button class="btn-jawab" onclick="window.toggleAnswer(this)"><i class="ph ph-pencil-simple"></i> Jawab</button>
-                <div class="answer-box">
-                    <textarea id="refleksi-1" placeholder="Tuliskan refleksi Anda..."></textarea>
-                    <button class="btn-simpan" onclick="window.saveAnswer('refleksi-1', this)"><i class="ph ph-floppy-disk"></i> Simpan</button>
-                </div>
-            </div>
-            
-            <div class="essay-question">
-                <p>2. Topik kritik apa yang ingin kamu tulis, dan bagaimana kamu menjaganya tetap santun?</p>
-                <button class="btn-jawab" onclick="window.toggleAnswer(this)"><i class="ph ph-pencil-simple"></i> Jawab</button>
-                <div class="answer-box">
-                    <textarea id="refleksi-2" placeholder="Tuliskan ide Anda..."></textarea>
-                    <button class="btn-simpan" onclick="window.saveAnswer('refleksi-2', this)"><i class="ph ph-floppy-disk"></i> Simpan</button>
-                </div>
-            </div>
+        <div class="page-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px;">
+            <i class="ph ph-check-circle" style="font-size: 4rem; color: #48bb78; margin-bottom: 20px;"></i>
+            <h3 style="margin-bottom: 15px; color: #2d3748; font-size: 1.4rem;">Sudah Selesai Mengerjakan?</h3>
+            <p style="line-height: 1.6; font-size: 0.95rem; color: #4a5568;">
+                Pastikan kamu sudah menekan tombol <strong>Kirim (Submit)</strong> di Google Form sebelum melanjutkan ya!<br><br>
+                Jika sudah, kamu boleh membalik halaman ini untuk membaca salam penutup.
+            </p>
             
             <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>13</span></div>
         </div>
