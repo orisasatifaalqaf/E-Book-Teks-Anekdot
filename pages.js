@@ -7,28 +7,28 @@ const bookPages = [
         <!-- Smooth gradient transition from image to solid color -->
         <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(26,54,93,0.1) 0%, rgba(26,54,93,0.85) 45%, rgba(26,54,93,1) 60%);"></div>
         
-        <div class="cover-content" style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 40px 30px; text-align: center;">
+        <div class="cover-content" style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 40px 20px; text-align: center;">
             
-            <div style="margin-top: 50%;">
-                <div style="display: inline-block; background-color: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; backdrop-filter: blur(4px);">
+            <div style="margin-top: auto;">
+                <div style="display: inline-block; background-color: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; backdrop-filter: blur(4px);">
                     Bahan Ajar Interaktif
                 </div>
                 
-                <h2 style="color: #cbd5e0; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">Bahasa Indonesia</h2>
+                <h2 style="color: #cbd5e0; font-family: var(--font-serif); font-size: 1rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">Bahasa Indonesia</h2>
                 
-                <h1 style="font-family: var(--font-display); font-size: 3.5rem; color: #fff; margin: 0 0 10px 0; line-height: 1.1; letter-spacing: 1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">TEKS<br>ANEKDOT</h1>
+                <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 10vw, 3.5rem); color: #fff; margin: 0 0 10px 0; line-height: 1.1; letter-spacing: 1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">TEKS<br>ANEKDOT</h1>
                 
                 <div style="height: 3px; background: #ecc94b; width: 50px; margin: 15px auto;"></div>
                 
-                <p style="color: #e2e8f0; font-size: 1.15rem; font-style: italic; line-height: 1.5; font-weight: 300;">Mengungkap Kritik Lewat<br>Tawa yang Santun</p>
+                <p style="color: #e2e8f0; font-size: clamp(1rem, 4vw, 1.15rem); font-style: italic; line-height: 1.5; font-weight: 300;">Mengungkap Kritik Lewat<br>Tawa yang Santun</p>
             </div>
 
             <!-- Author Section at Bottom -->
             <div style="margin-top: auto; padding-top: 20px;">
-                <span style="display:block; margin-bottom: 8px; color: #a0aec0; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Fase E • Kelas X • 2026/2027</span>
-                <span style="font-size: 0.85rem; color: #cbd5e0;">Disusun oleh</span><br>
-                <strong style="font-size: 1.3rem; letter-spacing: 0.5px; color: #fff; font-family: var(--font-sans); display: inline-block; margin: 2px 0;">Orisa Satifa Alqaf</strong><br>
-                <span style="font-size: 0.9rem; color: #a0aec0;">SMA Muhammadiyah 2 Yogyakarta</span>
+                <span style="display:block; margin-bottom: 8px; color: #a0aec0; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;">Fase E • Kelas X • 2026/2027</span>
+                <span style="font-size: 0.8rem; color: #cbd5e0;">Disusun oleh</span><br>
+                <strong style="font-size: 1.2rem; letter-spacing: 0.5px; color: #fff; font-family: var(--font-sans); display: inline-block; margin: 2px 0;">Orisa Satifa Alqaf</strong><br>
+                <span style="font-size: 0.85rem; color: #a0aec0;">SMA Muhammadiyah 2 Yogyakarta</span>
             </div>
             
         </div>
