@@ -687,8 +687,8 @@ body {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .container {
-        padding: 10px;
-        height: calc(100vh - 140px); /* Leave room for header and bottom nav */
+        padding: 4px;
+        height: calc(100vh - 130px); /* Leave room for header and bottom nav */
     }
     .page-content {
         padding: 20px;

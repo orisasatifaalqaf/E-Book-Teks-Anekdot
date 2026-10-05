@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 2. Initialize PageFlip
     const pageFlip = new St.PageFlip(flipbookEl, {
-        width: 450, // base width
-        height: 600, // base height
-        size: "stretch", // Reverted back to stretch to STOP the crash
+        width: 400, // base width (slightly narrower ratio)
+        height: 650, // taller base height to fill bottom space
+        size: "stretch",
         minWidth: 315,
-        maxWidth: 550, // Reduced to prevent too much empty space on big screens
+        maxWidth: 600, // allow a bit more stretch on big screens
         minHeight: 420,
-        maxHeight: 750, // Reduced so text fills the page nicely
+        maxHeight: 850, // increase max height so it can stretch fully on tall mobile screens
         maxShadowOpacity: 0.5,
         showCover: true,
         useMouseEvents: false, // Dimatikan 100% dari sistem bawaan agar tidak membajak layar
