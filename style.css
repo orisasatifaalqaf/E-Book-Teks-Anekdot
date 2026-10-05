@@ -1,0 +1,689 @@
+:root {
+    /* Color Palette - Premium & Modern */
+    --primary-color: #1a365d; /* Deep Navy Blue */
+    --primary-light: #2c5282;
+    --accent-color: #d69e2e; /* Golden Yellow */
+    --accent-light: #f6e05e;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --bg-page: #fdfdfc;
+    --bg-cover: #1a365d;
+    --bg-app: #f0f4f8;
+    
+    /* Typography */
+    --font-sans: 'Outfit', sans-serif;
+    --font-serif: 'Lora', serif;
+    --font-display: 'Playfair Display', serif;
+    
+    /* Shadows & Effects */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-book: 0 20px 40px rgba(0,0,0,0.2);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-main);
+    background-color: var(--bg-app);
+    overflow: hidden; /* Prevent body scroll, flipbook handles it */
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Background Abstract Shapes */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.shape-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: #4299e1;
+}
+
+.shape-2 {
+    bottom: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: #ecc94b;
+    opacity: 0.4;
+}
+
+.shape-3 {
+    top: 40%;
+    left: 40%;
+    width: 30vw;
+    height: 30vw;
+    background: #9f7aea;
+    opacity: 0.3;
+}
+
+/* Header UI - Glassmorphism */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px; /* Fixed height for calculations */
+    z-index: 100;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background: rgba(26, 54, 93, 0.1);
+    transform: scale(1.05);
+}
+
+.page-counter {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Flipbook Container */
+.container {
+    height: calc(100vh - 125px); /* Subtract header and footer height */
+    margin-top: 65px; /* Push down below header */
+    width: 100vw;
+    padding: 20px; 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    /* justify-content: center removed because it cuts off left side when overflowing */
+    overflow-x: hidden;
+}
+
+.flip-book {
+    margin: 0 auto; /* This centers it safely without cutting off left side */
+    box-shadow: var(--shadow-book);
+    border-radius: 4px 8px 8px 4px;
+    background: #fff;
+    /* Optional: book spine effect */
+}
+
+/* Book Page Default Styles */
+.page {
+    background-color: var(--bg-page);
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left page shadow */
+.page.--left {
+    border-right: 0;
+    box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+    border-radius: 8px 0 0 8px;
+}
+
+/* Right page shadow */
+.page.--right {
+    border-left: 0;
+    box-shadow: inset 10px 0 20px rgba(0,0,0,0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Hard Page (Cover) */
+.page.hard {
+    background-color: var(--bg-cover);
+    color: white;
+    border: 2px solid #0f2342;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+}
+
+.page.hard.front-cover {
+    border-radius: 0 12px 12px 0;
+}
+.page.hard.back-cover {
+    border-radius: 12px 0 0 12px;
+}
+
+/* Content Area inside pages */
+.page-content {
+    padding: 25px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-serif);
+    font-size: 14px; /* Reduced font size to normal */
+    line-height: 1.5; /* Reduced line height */
+    overflow-y: auto; /* Allow scrolling if it still overflows slightly */
+    scrollbar-width: none; /* Firefox */
+}
+.page-content::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+/* Typography inside Book */
+.page-content h1, .page-content h2, .page-content h3 {
+    font-family: var(--font-sans);
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.page-content h1 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.page-content p {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Table styles */
+.table-wrapper {
+    margin: 16px 0;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 14px;
+}
+
+.page-content th, .page-content td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: left;
+}
+
+.page-content th {
+    background-color: #edf2f7;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Custom Blocks (Alerts, Tips, Try it) */
+.block-alert {
+    background-color: #e6fffa;
+    border-left: 4px solid #319795;
+    padding: 12px;
+    margin: 16px 0;
+    border-radius: 0 4px 4px 0;
+}
+.block-alert.tip {
+    background-color: #ebf8ff;
+    border-left-color: #3182ce;
+}
+.block-alert.warning {
+    background-color: #fffaf0;
+    border-left-color: #dd6b20;
+}
+
+.block-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+/* Cover Styling */
+.cover-content {
+    padding: 40px 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #f6e05e;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.cover-title {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.cover-tagline {
+    font-style: italic;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.cover-author {
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.cover-author strong {
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+    margin: 4px 0;
+}
+
+/* Page Footer / Pagination */
+.page-footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Bottom Nav (Mobile) */
+.nav-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+/* Modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.2rem;
+    font-family: var(--font-sans);
+    margin: 0;
+    border: none;
+}
+
+.close-modal {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* TOC List */
+.toc-list {
+    list-style: none;
+}
+
+.toc-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #edf2f7;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.toc-list li:hover {
+    color: var(--accent-color);
+}
+
+.toc-list li:last-child {
+    border-bottom: none;
+}
+
+/* Info Profile */
+.profile-card {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.profile-avatar {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.profile-card h3 {
+    margin: 0 0 4px 0;
+    color: var(--primary-color);
+    border: none;
+}
+
+.role {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.school {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.info-desc p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 16px;
+}
+
+/* Quiz & Interactive Elements */
+.quiz-question {
+    margin-bottom: 15px;
+}
+.quiz-question p {
+    margin-bottom: 8px;
+}
+.quiz-options {
+    list-style: none;
+    margin-top: 5px;
+    padding-left: 0;
+}
+.quiz-options li {
+    margin-bottom: 4px;
+}
+.quiz-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.2s, border 0.2s;
+    border: 1px solid transparent;
+}
+.quiz-label:hover {
+    background: #edf2f7;
+    border-color: #e2e8f0;
+}
+.quiz-label input[type="radio"] {
+    margin-right: 12px;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* Essay Elements */
+.essay-question {
+    margin-bottom: 20px;
+}
+.btn-jawab {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+.btn-jawab:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-1px);
+}
+.btn-simpan {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    float: right;
+}
+.btn-simpan:hover {
+    background-color: #38a169;
+}
+.btn-simpan-pg {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+.btn-simpan-pg:hover {
+    background-color: #38a169;
+}
+.answer-box {
+    display: none;
+    margin-top: 12px;
+    animation: fadeIn 0.3s ease;
+}
+.answer-box.active {
+    display: block;
+}
+.answer-box textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    resize: vertical;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+.answer-box textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 70px 10px 70px 10px;
+    }
+    .page-content {
+        padding: 20px;
+        font-size: 14px;
+    }
+    .page-content h1 {
+        font-size: 1.4rem;
+    }
+    .cover-title {
+        font-size: 2.2rem;
+    }
+}
