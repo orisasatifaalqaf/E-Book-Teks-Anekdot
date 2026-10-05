@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         maxHeight: 750, // Reduced so text fills the page nicely
         maxShadowOpacity: 0.5,
         showCover: true,
-        mobileScrollSupport: false // prevent native scroll while flipping
+        useMouseEvents: true, // Re-enable to keep the 'digital book' feel
+        mobileScrollSupport: true, // Enable native vertical scrolling on mobile
+        swipeDistance: 50 // Increase swipe threshold so it's less sensitive
     });
 
     // Load pages
