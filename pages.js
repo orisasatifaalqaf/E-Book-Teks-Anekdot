@@ -73,9 +73,10 @@ const bookPages = [
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 4</strong> Contoh Anekdot dan Cara Membedahnya</span> <span>7</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 5</strong> Kritik yang Santun dan Bertanggung Jawab</span> <span>9</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 6</strong> Langkah-Langkah Menulis Anekdot</span> <span>10</span></li>
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 7</strong> Menyajikan Karya Anekdot</span> <span>12</span></li>
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 8</strong> Latihan dan Refleksi</span> <span>14</span></li>
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Penutup dan Daftar Pustaka</strong></span> <span>16</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 7</strong> Menyajikan Karya Anekdot</span> <span>11</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 8</strong> Latihan dan Refleksi</span> <span>12</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Penutup</strong></span> <span>14</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Daftar Pustaka</strong></span> <span>15</span></li>
             </ul>
             <div class="page-footer"><span></span><span>iii</span></div>
         </div>
@@ -526,11 +527,11 @@ const bookPages = [
                 Berlatih di depan kelompok kecil dahulu sebelum tampil di kelas. Rasa gugup itu wajar. Bawakan dengan percaya diri dan penuh semangat.
             </div>
             
-            <div class="page-footer"><span>BAB 7 Menyajikan Karya</span><span>11-12</span></div>
+            <div class="page-footer"><span>BAB 7 Menyajikan Karya</span><span>11</span></div>
         </div>
     </div>
     `,
-    // Page 15: BAB 8 Latihan (p14)
+    // Page 15: BAB 8 Latihan (p12)
     `
     <div class="page">
         <div class="page-content">
@@ -595,11 +596,11 @@ const bookPages = [
             
             <button class="btn-simpan-pg" onclick="window.saveMCQ(this)"><i class="ph ph-floppy-disk"></i> Simpan Pilihan Ganda</button>
             
-            <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>14</span></div>
+            <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>12</span></div>
         </div>
     </div>
     `,
-    // Page 16: BAB 8 Lanjutan (p15)
+    // Page 16: BAB 8 Lanjutan (p13)
     `
     <div class="page">
         <div class="page-content">
@@ -607,7 +608,18 @@ const bookPages = [
             
             <div class="essay-question">
                 <p>1. Sebutkan struktur, dua kaidah kebahasaan, dan kritik yang ingin disampaikan pada teks anekdot "Piket Kelas"!</p>
-                <button class="btn-jawab" onclick="window.toggleAnswer(this)"><i class="ph ph-pencil-simple"></i> Jawab</button>
+                <div style="margin-bottom: 12px; display: flex; gap: 8px;">
+                    <button class="btn-jawab" onclick="window.toggleAnswer(this)" style="margin: 0;"><i class="ph ph-pencil-simple"></i> Jawab</button>
+                    <button class="btn-lihat-teks" onclick="window.toggleTeks(this)" style="background-color: #4a5568; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;"><i class="ph ph-book-open"></i> Lihat Teks</button>
+                </div>
+                
+                <div class="teks-box" style="display: none; margin-bottom: 15px; padding: 15px; background: #ebf8ff; border-left: 4px solid #3182ce; border-radius: 4px; font-size: 0.85rem; animation: fadeIn 0.3s ease; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                    <strong style="display:block; margin-bottom:8px; color:#2c5282;">Teks: Piket Kelas</strong>
+                    <p style="margin-bottom:8px; line-height: 1.5;">Senin pagi, Bu Sari masuk ke kelas. Papan tulis masih penuh coretan, dan lantai berserakan kertas. Di daftar piket tertulis lima nama, tetapi tak satu pun terlihat memegang sapu.</p>
+                    <p style="margin-bottom:8px; line-height: 1.5;">"Siapa yang piket hari ini?" tanya Bu Sari. Lima anak saling menoleh. "Kami piket hari Jumat, Bu," jawab Dani. "Tapi sekarang hari Senin," kata Bu Sari. "Justru itu, Bu. Kami menyisakan sampah supaya hari Jumat nanti tidak bingung mau membersihkan apa," jawab Dani mantap.</p>
+                    <p style="line-height: 1.5;">Bu Sari tersenyum, lalu mengambil sapu dan menyerahkannya kepada Dani. "Alasan yang bagus. Karena kalian rajin menyimpan sampah, hari ini kalian juga yang menyimpannya ke tempat sampah." Lima anak itu pun bergegas menyapu.</p>
+                </div>
+
                 <div class="answer-box">
                     <textarea id="uraian-1" placeholder="Ketik jawaban Anda di sini..."></textarea>
                     <button class="btn-simpan" onclick="window.saveAnswer('uraian-1', this)"><i class="ph ph-floppy-disk"></i> Simpan</button>
@@ -643,22 +655,22 @@ const bookPages = [
                 </div>
             </div>
             
-            <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>15</span></div>
+            <div class="page-footer"><span>BAB 8 Latihan & Refleksi</span><span>13</span></div>
         </div>
     </div>
     `,
-    // Page 17: Penutup (p16)
+    // Page 17: Penutup (p14)
     `
     <div class="page">
         <div class="page-content">
             <h1 style="border:none; margin-bottom:5px; font-size:1.5rem;">Penutup</h1>
             <p>Anekdot mengajarkan bahwa kritik tidak harus disampaikan dengan marah. Dengan humor yang cerdas, santun, dan berdasar fakta, kita dapat mengajak orang lain berkaca tanpa merasa dihakimi. Teruslah mengamati sekitarmu, menulis, dan berani menyampaikan gagasan.</p>
             
-            <div class="page-footer"><span>Penutup</span><span>16</span></div>
+            <div class="page-footer"><span>Penutup</span><span>14</span></div>
         </div>
     </div>
     `,
-    // Page 18: Daftar Pustaka (p17)
+    // Page 18: Daftar Pustaka (p15)
     `
     <div class="page">
         <div class="page-content">
@@ -669,7 +681,7 @@ const bookPages = [
             
             <p style="text-align: center; font-style: italic; margin-top: 60px; color: var(--accent-color);">— Selamat belajar dan berkarya —</p>
             
-            <div class="page-footer"><span>Daftar Pustaka</span><span>17</span></div>
+            <div class="page-footer"><span>Daftar Pustaka</span><span>15</span></div>
         </div>
     </div>
     `,

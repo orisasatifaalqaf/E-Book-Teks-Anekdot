@@ -155,12 +155,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Global function for essay answer toggling
 window.toggleAnswer = function(btn) {
-    const box = btn.nextElementSibling;
-    box.classList.toggle('active');
-    if (box.classList.contains('active')) {
-        btn.innerHTML = '<i class="ph ph-x"></i> Tutup';
-    } else {
-        btn.innerHTML = '<i class="ph ph-pencil-simple"></i> Jawab';
+    const essayContainer = btn.closest('.essay-question');
+    const box = essayContainer.querySelector('.answer-box');
+    if(box) {
+        box.classList.toggle('active');
+        if (box.classList.contains('active')) {
+            btn.innerHTML = '<i class="ph ph-x"></i> Tutup';
+        } else {
+            btn.innerHTML = '<i class="ph ph-pencil-simple"></i> Jawab';
+        }
+    }
+};
+
+// Global function for showing text context
+window.toggleTeks = function(btn) {
+    const essayContainer = btn.closest('.essay-question');
+    const box = essayContainer.querySelector('.teks-box');
+    if(box) {
+        if (box.style.display === 'none' || box.style.display === '') {
+            box.style.display = 'block';
+            btn.innerHTML = '<i class="ph ph-eye-slash"></i> Tutup Teks';
+        } else {
+            box.style.display = 'none';
+            btn.innerHTML = '<i class="ph ph-book-open"></i> Lihat Teks';
+        }
     }
 };
 
