@@ -63,19 +63,19 @@ const bookPages = [
     <div class="page">
         <div class="page-content">
             <h1>Daftar Isi</h1>
-            <ul style="list-style: none; line-height: 2;">
-                <li><strong>Kata Pengantar</strong> <span style="float: right;">ii</span></li>
-                <li><strong>Daftar Isi</strong> <span style="float: right;">iii</span></li>
-                <li><strong>Pemantik</strong> <span style="float: right;">iv</span></li>
-                <li><strong>BAB 1</strong> Mengenal Teks Anekdot <span style="float: right;">1</span></li>
-                <li><strong>BAB 2</strong> Struktur Teks Anekdot <span style="float: right;">3</span></li>
-                <li><strong>BAB 3</strong> Kaidah Kebahasaan Teks Anekdot <span style="float: right;">5</span></li>
-                <li><strong>BAB 4</strong> Contoh Anekdot dan Cara Membedahnya <span style="float: right;">7</span></li>
-                <li><strong>BAB 5</strong> Kritik yang Santun dan Bertanggung Jawab <span style="float: right;">9</span></li>
-                <li><strong>BAB 6</strong> Langkah-Langkah Menulis Anekdot <span style="float: right;">10</span></li>
-                <li><strong>BAB 7</strong> Menyajikan Karya Anekdot <span style="float: right;">12</span></li>
-                <li><strong>BAB 8</strong> Latihan dan Refleksi <span style="float: right;">14</span></li>
-                <li><strong>Penutup dan Daftar Pustaka</strong> <span style="float: right;">16</span></li>
+            <ul style="list-style: none; line-height: 1.4; padding: 0;">
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Kata Pengantar</strong></span> <span>ii</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Daftar Isi</strong></span> <span>iii</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Pemantik</strong></span> <span>iv</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 1</strong> Mengenal Teks Anekdot</span> <span>1</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 2</strong> Struktur Teks Anekdot</span> <span>3</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 3</strong> Kaidah Kebahasaan Teks Anekdot</span> <span>5</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 4</strong> Contoh Anekdot dan Cara Membedahnya</span> <span>7</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 5</strong> Kritik yang Santun dan Bertanggung Jawab</span> <span>9</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 6</strong> Langkah-Langkah Menulis Anekdot</span> <span>10</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 7</strong> Menyajikan Karya Anekdot</span> <span>12</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 8</strong> Latihan dan Refleksi</span> <span>14</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Penutup dan Daftar Pustaka</strong></span> <span>16</span></li>
             </ul>
             <div class="page-footer"><span></span><span>iii</span></div>
         </div>

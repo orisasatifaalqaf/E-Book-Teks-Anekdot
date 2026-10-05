@@ -16,13 +16,40 @@ document.addEventListener('DOMContentLoaded', function() {
         maxHeight: 750, // Reduced so text fills the page nicely
         maxShadowOpacity: 0.5,
         showCover: true,
-        useMouseEvents: true, // Re-enable to keep the 'digital book' feel
-        mobileScrollSupport: true, // Enable native vertical scrolling on mobile
-        swipeDistance: 150 // Sangat tidak sensitif; hanya geseran panjang atau sentuhan di ujung layar yang akan membalik halaman
+        useMouseEvents: false, // Dimatikan 100% dari sistem bawaan agar tidak membajak layar
+        mobileScrollSupport: false // Dimatikan dari sistem bawaan
     });
 
     // Load pages
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+    
+    // CUSTOM SWIPE DETECTION (Sangat presisi)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    flipbookEl.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, {passive: true});
+    
+    flipbookEl.addEventListener('touchend', e => {
+        let touchEndX = e.changedTouches[0].screenX;
+        let touchEndY = e.changedTouches[0].screenY;
+        
+        let deltaX = touchEndX - touchStartX;
+        let deltaY = touchEndY - touchStartY;
+        
+        // Cek jika usapan LEBIH DARI 60px secara horizontal, DAN KURANG DARI 40px secara vertikal (bukan scroll atas/bawah)
+        if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40) {
+            if (deltaX < 0) {
+                // Usap ke kiri -> Selanjutnya
+                pageFlip.flipNext();
+            } else {
+                // Usap ke kanan -> Sebelumnya
+                pageFlip.flipPrev();
+            }
+        }
+    }, {passive: true});
 
     // 3. UI Controls and Events
     const btnNext = document.getElementById('btn-next');
