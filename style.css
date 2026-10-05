@@ -700,4 +700,12 @@ body {
     .cover-title {
         font-size: 2.2rem;
     }
+    .nav-controls {
+        bottom: 10px;
+        gap: 8px;
+    }
+    .nav-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
 }

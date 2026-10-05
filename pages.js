@@ -42,7 +42,37 @@ const bookPages = [
         </div>
     </div>
     `,
-    // Page 2: Kata Pengantar (ii)
+    // Page 2: Petunjuk Penggunaan (ii)
+    `
+    <div class="page">
+        <div class="page-content">
+            <h1>Petunjuk Penggunaan</h1>
+            <p style="margin-bottom: 15px;">Agar kamu bisa belajar dengan nyaman menggunakan E-Book interaktif ini, yuk kenali tombol-tombol yang ada di layar:</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;">
+                    <strong><i class="ph ph-list-dashes" style="font-size: 1.2rem; color: var(--primary-color);"></i> Tombol Tiga Garis (Daftar Isi)</strong><br>
+                    Tombol ini terletak di bagian atas. Klik tombol ini untuk membuka Daftar Isi. Kamu bisa melompat ke bab mana saja dengan cepat tanpa harus membalik halaman satu per satu.
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong><i class="ph ph-info" style="font-size: 1.2rem; color: var(--primary-color);"></i> Tombol Tanda Seru (Informasi)</strong><br>
+                    Tombol ini berisi profil singkat penyusun dan tujuan dibuatnya e-book ini.
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong><i class="ph ph-arrows-left-right" style="font-size: 1.2rem; color: var(--primary-color);"></i> Membalik Halaman</strong><br>
+                    Gunakan tombol "Sebelumnya" dan "Selanjutnya" di bawah layar. Alternatifnya, kamu juga bisa langsung <strong>mengusap (swipe) layar</strong> ke kiri atau ke kanan seperti membaca buku sungguhan!
+                </li>
+                <li>
+                    <strong><i class="ph ph-pencil-simple" style="font-size: 1.2rem; color: var(--primary-color);"></i> Interaksi Coba Sendiri</strong><br>
+                    Di beberapa bab, kamu akan menemukan kotak berwarna oranye berisi tugas ringan. Jangan dilewati ya, ini akan membantu menguji pemahamanmu!
+                </li>
+            </ul>
+            
+            <div class="page-footer"><span></span><span>ii</span></div>
+        </div>
+    </div>
+    `,
+    // Page 3: Kata Pengantar (iii)
     `
     <div class="page">
         <div class="page-content">
@@ -54,19 +84,20 @@ const bookPages = [
             <br>
             <p style="text-align: right;">Yogyakarta, 2026<br><strong>Penyusun</strong></p>
             
-            <div class="page-footer"><span></span><span>ii</span></div>
+            <div class="page-footer"><span></span><span>iii</span></div>
         </div>
     </div>
     `,
-    // Page 3: Daftar Isi (iii)
+    // Page 4: Daftar Isi (iv)
     `
     <div class="page">
         <div class="page-content">
             <h1>Daftar Isi</h1>
             <ul style="list-style: none; line-height: 1.4; padding: 0;">
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Kata Pengantar</strong></span> <span>ii</span></li>
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Daftar Isi</strong></span> <span>iii</span></li>
-                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Pemantik</strong></span> <span>iv</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Petunjuk Penggunaan</strong></span> <span>ii</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Kata Pengantar</strong></span> <span>iii</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Daftar Isi</strong></span> <span>iv</span></li>
+                <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Pemantik</strong></span> <span>v</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 1</strong> Mengenal Teks Anekdot</span> <span>1</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 2</strong> Struktur Teks Anekdot</span> <span>3</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>BAB 3</strong> Kaidah Kebahasaan Teks Anekdot</span> <span>5</span></li>
@@ -78,11 +109,11 @@ const bookPages = [
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Penutup</strong></span> <span>14</span></li>
                 <li style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;"><span><strong>Daftar Pustaka</strong></span> <span>15</span></li>
             </ul>
-            <div class="page-footer"><span></span><span>iii</span></div>
+            <div class="page-footer"><span></span><span>v</span></div>
         </div>
     </div>
     `,
-    // Page 4: Pemantik (iv)
+    // Page 5: Pemantik (v)
     `
     <div class="page">
         <div class="page-content" style="padding: 20px;">
@@ -118,7 +149,7 @@ const bookPages = [
                 </div>
             </div>
             
-            <div class="page-footer"><span>Yuk, Simak Hal-Hal Berikut!</span><span>iv</span></div>
+            <div class="page-footer"><span>Yuk, Simak Hal-Hal Berikut!</span><span>v</span></div>
         </div>
     </div>
     `,

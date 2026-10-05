@@ -127,19 +127,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.getElementById('toc-list');
     const tocData = [
         { title: "Sampul Depan", page: 0 },
-        { title: "Kata Pengantar", page: 2 },
-        { title: "Daftar Isi", page: 3 },
-        { title: "Pemantik", page: 4 },
-        { title: "BAB 1: Mengenal Teks Anekdot", page: 5 },
-        { title: "BAB 2: Struktur Teks Anekdot", page: 7 },
-        { title: "BAB 3: Kaidah Kebahasaan", page: 9 },
-        { title: "BAB 4: Contoh Anekdot", page: 11 },
-        { title: "BAB 5: Kritik yang Santun", page: 13 },
-        { title: "BAB 6: Langkah Menulis", page: 14 },
-        { title: "BAB 7: Menyajikan Karya", page: 15 },
-        { title: "BAB 8: Latihan & Refleksi", page: 16 },
-        { title: "Penutup", page: 17 },
-        { title: "Daftar Pustaka", page: 18 }
+        { title: "Petunjuk Penggunaan", page: 2 },
+        { title: "Kata Pengantar", page: 3 },
+        { title: "Daftar Isi", page: 4 },
+        { title: "Pemantik", page: 5 },
+        { title: "BAB 1: Mengenal Teks Anekdot", page: 6 },
+        { title: "BAB 2: Struktur Teks Anekdot", page: 8 },
+        { title: "BAB 3: Kaidah Kebahasaan", page: 10 },
+        { title: "BAB 4: Contoh Anekdot", page: 12 },
+        { title: "BAB 5: Kritik yang Santun", page: 14 },
+        { title: "BAB 6: Langkah Menulis", page: 15 },
+        { title: "BAB 7: Menyajikan Karya", page: 16 },
+        { title: "BAB 8: Latihan & Refleksi", page: 17 },
+        { title: "Penutup", page: 18 },
+        { title: "Daftar Pustaka", page: 19 }
     ];
 
     tocData.forEach(item => {
