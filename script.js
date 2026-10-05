@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showCover: true,
         useMouseEvents: true, // Re-enable to keep the 'digital book' feel
         mobileScrollSupport: true, // Enable native vertical scrolling on mobile
-        swipeDistance: 50 // Increase swipe threshold so it's less sensitive
+        swipeDistance: 150 // Sangat tidak sensitif; hanya geseran panjang atau sentuhan di ujung layar yang akan membalik halaman
     });
 
     // Load pages
